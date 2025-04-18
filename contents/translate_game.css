@@ -1,0 +1,43 @@
+html {
+    background-color: #eee;
+}
+
+.stilfonta{
+    font-family: 'Trebuchet MS';
+}
+
+.row{
+    display: flex;
+    gap: 120px;
+    padding: 10px;
+    font-family: 'Trebuchet MS';
+}
+
+.cell{
+    width: 150px; 
+  }
+
+.gray-bold{
+    color: gray;
+    font-weight: bold;
+  }
+
+.black-bold{
+    color: black;
+    font-weight: bold;
+  }
+
+.blue-bold{
+    color: blue;
+    font-weight: bold;
+  }
+
+.red-bold{
+    color: red;
+    font-weight: bold;
+  }
+
+.precrtano{
+    text-decoration: line-through;
+  }
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Ready, Set, Translate !</title>
+    <link type="text/css" href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link type="text/css" href="translate_game.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="dicts.json"></script>
+    <script type="text/javascript" src="translate_game.js"></script>
+
+  </head>
+  <body>
+   
+    <h1 class="stilfonta"> Translate from <span class="gray-bold" id="langFrom1"></span> to <span class="gray-bold" id="langTo1"></span> </h1>
+
+    <div class="row"> 
+      <p class="cell gray-bold" id="langFrom2"></p>
+      <p class="cell gray-bold"id="langTo2"></p>
+      <p class="cell gray-bold">Answer</p>
+    </div>
+
+    <div class="row"> 
+      <p class="cell black-bold" id="langFrom3"></p>
+      <input class="cell" type="text" id="brisiInput"></input>
+      <button type="submit" class="cell" id="submitBtn"> See answer </button>
+    </div>
+
+    <div class="row"> 
+      <p class="cell blue-bold">calabaza</p>
+      <p class="cell blue-bold">pumpking</p>
+      <p class="cell">&#10003;</p>
+    </div>
+
+    <div class="row"> 
+      <p class="cell red-bold">postmodernidad</p>
+      <p class="cell red-bold precrtano">phone</p> 
+      <p class="cell red-bold">postmodernism</p>
+    </div>
+
+
+  </body>
+</html>
