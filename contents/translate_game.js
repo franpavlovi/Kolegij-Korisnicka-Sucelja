@@ -5,6 +5,9 @@ $(function() {
 	var lang_from		= "Spanish";
 	var current_dict	= dicts[lang_to][lang_from]; // keys: words in @lang_to, values: corresponding words in @lang_from 	
 
+	let randomEngRijec = "";
+	let spanjolskaRijec = "";
+	let userInput = "";
 
 
 	function umetniLangFrom(lang_from){
@@ -33,11 +36,11 @@ $(function() {
 		let EngleskeRijeci = Object.keys(current_dict);
 		let randomIndex = Math.floor(Math.random() * EngleskeRijeci.length);
 
-		let randomEngRijec = EngleskeRijeci[randomIndex];
+		randomEngRijec = EngleskeRijeci[randomIndex];
 
-		let prijevodEngRijeciNaSpanjolski = current_dict[randomEngRijec];
+		spanjolskaRijec = current_dict[randomEngRijec];
 
-		$("#langFrom3").html(prijevodEngRijeciNaSpanjolski);
+		$("#langFrom3").html(spanjolskaRijec);
 
 	}
 
@@ -47,16 +50,48 @@ $(function() {
 
 	function submitRijec(){
 
-		$("#brisiInput").val(" ");
+		$("#brisiInput").val("");
+
 		randomRijec(current_dict);
 
 	}
 
 	$("#submitBtn").click(function() {
+		prosliPokusaj();
 		submitRijec();
+		
 	});
 
 
+	
+	function prosliPokusaj() {
+		userInput = $("#brisiInput").val().trim();
 
+		if( userInput == randomEngRijec){
 
+			var div = $.parseHTML(`
+				<div class="row">
+					<p class="cell blue-bold">${spanjolskaRijec}</p>
+					<p class="cell blue-bold">${randomEngRijec}</p>
+					<p class="cell">&#10003;</p>
+				</div>
+			`);
+			$("#wrapper").prepend(div);
+
+		}
+		else{
+
+			var div = $.parseHTML(`
+				<div class="row">
+					<p class="cell red-bold">${spanjolskaRijec}</p>
+					<p class="cell red-bold precrtano">${userInput}</p>
+					<p class="cell red-bold">${randomEngRijec}</p>
+				</div>
+			`);
+			$("#wrapper").prepend(div);
+
+		}
+		
+	}
+	
     });
