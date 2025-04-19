@@ -11,6 +11,7 @@ html {
     gap: 120px;
     padding: 10px;
     font-family: 'Trebuchet MS';
+    position: relative;
 }
 
 .cell{
@@ -39,5 +40,23 @@ html {
 
 .precrtano{
     text-decoration: line-through;
-  }
+}
+
+.lista{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin-left: 285px;
+    margin-top: 165px;
+    width: 150px; 
+    padding: 5px;
+    max-height: 200px;
+    overflow-y: auto; 
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1000; 
+    display: none; 
+}
+  
+  
 

@@ -9,6 +9,8 @@ $(function() {
 	let spanjolskaRijec = "";
 	let userInput = "";
 
+	let rijeci = Object.keys(current_dict);
+
 
 	function umetniLangFrom(lang_from){
 		$("#langFrom1").html(lang_from);
@@ -59,6 +61,7 @@ $(function() {
 	$("#submitBtn").click(function() {
 		prosliPokusaj();
 		submitRijec();
+		$("#rezultatiPretrage").hide();
 		
 	});
 
@@ -93,5 +96,48 @@ $(function() {
 		}
 		
 	}
+
+
+
+	$("#brisiInput").on("input", function(){
+		let trenutniUnos = $(this).val();
+
+		if( trenutniUnos.length >= 2){
+
+			let pretraga = rijeci.filter(rijec => rijec.includes(trenutniUnos));
+			console.log(pretraga);
+
+			var search = "";
+
+			pretraga.forEach(rijec => {
+				search += `
+				<div>
+				<p>${rijec}</p>
+				</div>
+				`
+			});
+
+			$("#rezultatiPretrage").html(search).show();
+
+		}else{
+			$("#rezultatiPretrage").empty().hide();
+
+		}
+	});
+	
+
+	
+	$("#rezultatiPretrage").on("click", "p", function() {
+		let odabraniPrijedlog = $(this).text();
+
+		$("#brisiInput").val(odabraniPrijedlog);
+
+		prosliPokusaj();
+		submitRijec();
+
+		$("#rezultatiPretrage").hide();
+	});
 	
     });
+
+	
